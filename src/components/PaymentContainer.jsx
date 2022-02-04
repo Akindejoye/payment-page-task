@@ -1,11 +1,16 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import Completion from './Completion';
+import Estimation from './Estimation';
 import Header from './Header';
 import InfoPayment from './InfoPayment';
 import MobileHeader from './MobileHeader';
 
 const PaymentWrapper  = styled.div`
-    
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
+    overflow: hidden;
 `;
 
 const Hr = styled.hr`
@@ -31,6 +36,10 @@ const PaymentContainer = () => {
             <Header toggle={toggle} />
             <Hr />
             <InfoPayment />
+            <Hr />
+            <Estimation />
+            <Hr />
+            <Completion />
         </PaymentWrapper>
      );
 }

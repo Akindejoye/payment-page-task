@@ -14,8 +14,10 @@ const Container = styled.div`
     justify-content: center;
     top: 0;
     left: 0;
-    transition: 0.3s ease-in-out;
+    transition: 700ms ease-in-out;
     opacity: ${({ isOpen }) => (isOpen ? '100%' : '0')};
+    top: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+    background-color: #fff;
     }
 `;
 const Icon = styled.button`
@@ -27,6 +29,7 @@ const Icon = styled.button`
     border: none;
     outline: none;
     background-color: transparent;
+    color: red;
 `;
 const ListWrapper = styled.ul`
     list-style: none;
@@ -46,6 +49,7 @@ const ListItem = styled.li`
     font-size: 2.5rem;
     font-weight: bold;
     text-transform: uppercase;
+    color: #000;
 `;
 
 

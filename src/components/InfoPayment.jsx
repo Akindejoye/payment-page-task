@@ -6,6 +6,15 @@ import Paypal from '../images/paypal-logo.png';
 
 const Container = styled.div`
     display: flex;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    @media screen and (max-width: 750px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 
 `;
 
@@ -13,15 +22,32 @@ const InfoLeft = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
 `;
 const Header = styled.h1`
     font-size: 3rem;
+    margin-bottom: 1rem;
+
+    @media screen and (max-width: 750px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
 `;
 const SubHeader = styled.h2`
     font-size: 2rem;
     opacity: 0.3;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 750px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 `;
 const MasterCard = styled.div``;
 const Card = styled.img`
@@ -35,6 +61,11 @@ const InfoRight = styled.div`
 const LogoWrapper = styled.div`
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 4rem;
+
+    @media screen and (max-width: 750px) {
+        display: none;
+    }
 `;
 const Logo = styled.img`
     width: 5rem;
@@ -45,12 +76,25 @@ const WrapperMainInput = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 750px) {
+        margin-top: 5rem;
+    }
+
+    @media screen and (max-width: 690px) {
+        display: flex;
+        flex-direction: column;
+    }
 `;
 const InputWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    margin-right: 3rem;
     margin-bottom: 3rem;
+    margin-right: 2rem;
+
+    @media screen and (max-width: 690px) {
+       margin-bottom: 2rem;
+    }
 `;
 const Label = styled.label`
     font-size: 1.6rem;
@@ -64,6 +108,36 @@ const Input = styled.input`
     outline: none;
     padding: 0.5rem 2rem;
     color: #1B1212;
+`;
+
+const PurchaseWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+`;
+const Radio = styled.input`
+    width: 2rem;
+    height: 2rem;
+    background-color: blue;
+`;
+const LabelRadio = styled.label`
+    margin-left: 2rem;
+    font-size: 1.7rem;
+`;
+
+const AddCard = styled.button`
+    padding: 2rem;
+    background-color: #1260cc;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+
+    @media screen and (max-width: 750px) {
+        width: 70%;
+        margin: 0 auto;
+    }
 `;
 
 
@@ -91,7 +165,7 @@ const InfoPayment = () => {
                     </InputWrapper>
                     <InputWrapper>
                         <Label>Expiration date</Label>
-                        <Input placeholder='03/24' />
+                        <Input placeholder='01/20' />
                     </InputWrapper>
                 </WrapperMainInput>
                 <WrapperMainInput>
@@ -104,6 +178,13 @@ const InfoPayment = () => {
                         <Input placeholder='10119' />
                     </InputWrapper>
                 </WrapperMainInput>
+                <PurchaseWrapper>
+                    <Radio type='radio' />
+                    <LabelRadio>
+                        Use this card for next time purchase
+                    </LabelRadio>
+                </PurchaseWrapper>
+                <AddCard>Add card</AddCard>
             </InfoRight>
         </Container>
      );

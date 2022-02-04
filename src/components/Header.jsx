@@ -2,14 +2,13 @@ import styled from 'styled-components';
 import Lady from '../images/lady-blue.jpg';
 import {FaBars} from 'react-icons/fa';
 
-const Container = styled.div`
+const Wrapper = styled.div`
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-top: 3rem;
     padding-right: 2rem;
     padding-bottom: 8rem;
-    opacity: ${({ toggle }) => (!toggle ? '0' : '100%')};
 `;
 const ListWrapper = styled.ul`
     list-style: none;
@@ -50,6 +49,9 @@ const Icon = styled.button`
     @media screen and (max-width: 750px) {
         display: block;
         font-size: 5rem;
+        position: absolute;
+        right: 2rem;
+        top: 1rem;
         cursor: pointer;
         border: none;
         outline: none;
@@ -59,7 +61,7 @@ const Icon = styled.button`
 
 const Header = ({ toggle }) => {
     return ( 
-        <Container toggle>
+        <Wrapper>
             <ListWrapper>
                 <ListItem>Trips</ListItem>
                 <ListItem>Recently Viewed</ListItem>
@@ -71,7 +73,7 @@ const Header = ({ toggle }) => {
             <Icon onClick={toggle}>
                 <FaBars />
             </Icon>
-        </Container>
+        </Wrapper>
      );
 }
  
